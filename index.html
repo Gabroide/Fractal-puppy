@@ -1,267 +1,634 @@
-﻿<!DOCTYPE html>
-<html lang="es-ES">
-    <head>
-        <title>Fracta Puppy</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fractal Puppy</title>
 
-        <link rel="shortcut icon" href="img/ico/favicon.ico">
+    <!-- Icon -->
+	  <link rel="shortcut icon" href="img/favicon.ico">
 
-        <link href="css/styles.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-        <style>
-            @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&subset=latin-ext');
+    <meta name="keywords" content="Fractal Puppy fractalpuppy videogames 3D neta master UPC C++ engine" />
+    <meta name="description" content="Fractal Puppy is a group of young programmers and artist
+    formed in a UPC master about videogames we are developing a videogame with ut own engine." />
 
-            .gantt {
-	             float: left;
-	              padding: 2px;
-              }
-              .bigImg {
-	               padding: 5px;
-	                height: 300px;
-	                 width: 50vw;
-	                  overflow: hidden;
-	                   overflow-x: auto;
-	                    border: 1px solid #000; /* solo para test */
-              }
-              .portaimagen {
-	               width: 920px;
-	               overflow: hidden;
-               }
-        </style>
+    <!--<link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-responsive.css" />
+    --><link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/landing-style.css" />
 
-    </head>
-    <body>
-        <header>
-            <div id="pre-menu">
-                <div id="languages">
-                    <ul>
-                        <li><a  id="es" href="#" title="Página en castellano">ES</a></li>
-                        <li>|</li>
-                        <li><a href="cat/index.html" title="Pàgina en català">CA</a></li>
-                        <li>|</li>
-                        <li><a href="en/index.html" title="Web in english">EN</a></li>
-                    </ul>
+    <style>
+      a{text-decoration: none;}
+
+      #counter{position: absolute;top: 150px; left: 7vw; z-index: 10;}
+
+      @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+      .clockText{
+        font-family: "Montserrat";
+	      text-align: center;
+	      color: #FFF;
+	      display: flex;
+	      flex-direction: column;
+	      align-items: center;
+	      justify-content: center;
+	      letter-spacing: 1px;
+      }
+
+      .clockText h2
+      {
+        background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	      background-size: cover;
+	      color: transparent;
+	      -moz-background-clip: text;
+	      -webkit-background-clip: text;
+	      text-transform: uppercase;
+	      font-size: 40px;
+	      line-height: 1.5;
+	      margin: 10px 0;
+      }
+
+      #demo
+      {
+        color: red;
+        font-weight: bolder;
+        font-size: 30pt;
+      }
+
+    </style>
+
+    <script>
+      $(document).ready(function(){
+        $("#myModal").on("hidden.bs.modal",function(){
+          $("#iframeYoutube").attr("src","#");
+        })
+      })
+
+      function changeVideo(vId){
+        var iframe=document.getElementById("iframeYoutube");
+        iframe.src="https://www.youtube.com/embed/"+vId;
+
+        $("#myModal").modal("show");
+        $(this).find('video')[0].pause();
+      }
+
+      /* Clock */
+      function cerrar() {
+        div = document.getElementById('counter');
+        div.style.display = 'none';
+      }
+
+    </script>
+
+    <script src="js/soon.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141248280-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-141248280-1');
+  </script>
+
+
+  </head>
+
+  <body onload="countdown();"> <!--onload="abrir()">-->
+    <!-- Hero section -->
+    <section id="hero" class="text-white tm-font-big tm-parallax">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
+        <div class="container">
+          <div class="tm-next">
+              <a href="#hero" class="navbar-brand"><img src="img/favico.png" alt="Fractal Puppy logo" class="icon">Fractal Puppy</a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#home">The studio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#media">Media</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#downloads">Downloads</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#presskit">Presskit</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="text-center tm-hero-text-container">
+        <div class="tm-hero-text-container-inner">
+          <div class="no-color">
+            <<!--<a class="btn btn-primary" data-toggle="modal" data-target="#ModalNew"
+            title="Neta game intro" onclick="document.getElementsByClass('video').play();">
+              <span class="big-icon">
+                <i class="fa fa-play"></i>
+              </span>
+            </a>-->
+            <!--<h2 class="tm-hero-title">Fractal Puppy</h2>
+            <p class="tm-hero-subtitle">
+              Creating the videogame of the future
+              <br />
+            </p>-->
+          </div>
+        </div>
+
+        <div class="tm-next tm-intro-next no-color no-show">
+        <!--<a href="#home" class="text-center tm-down-arrow-link">
+          <i class="fas fa-3x fa-caret-down tm-down-arrow"></i>
+        </a>-->
+          <a class="btn btn-primary" data-toggle="modal" data-target="#ModalNew"
+          title="Neta game intro" onclick="document.getElementsByClass('video').play();">
+            <span class="big-icon">
+              <i class="fa fa-play"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="home" class="tm-section-pad-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="img/giftGrupo.gif" alt="Fractal Puppy Team" class="img-fluid tm-intro-img" />
+          </div>
+          <div class="col-lg-6">
+            <div class="tm-intro-text-container">
+                <h2 class="tm-text-primary mb-4 tm-section-title">The studio</h2>
+                <p class="mb-4 tm-intro-text">
+                  <strong>Fractal Puppy</strong> is a studio created by young game developers
+                  who met each other at <strong lang="es">Máster de Diseño y Creación de Videojuego</strong>
+                  from <abbr lang="es" title="Universidad Politécnica de Caraluña">
+                    <a href="https://www.talent.upc.edu/" title="Link with UPC School" target="_blank">UPC</a></abbr>
+              </p>
+                <p class="mb-5 tm-intro-text">
+                  We are currently developing our first videogame with our own engine, written in C++,
+                  which can be downloaded in the
+                  <a href="#downloads">dowload</a> section.
+                  <div class="tm-next">
+                  <!-- WORKING ON IT! -->
+                  <!--<a href="es/personal.html" class="tm-intro-text tm-btn-primary">Meet Us!</a>-->
+                  <a href="en/neta.html" class="tm-intro-text tm-btn-primary">Meet Us!</a>
                 </div>
             </div>
-            <div id="menu">
-                <a id="logo" href="index.html" title="Enlaza con la página principal">
-                    <picture>
-                        <source
-                            media="(max-width: 600px)"
-                            srcset="img/logo2.png" alt="Logo de Fractal Puppy">
-                        <img src="img/logo.png" alt="Logo de Fractal Puppy">
-                   </picture>
-                </a>
+          </div>
+        </div>
 
-                <nav>
-                    <ul>
-                        <li><a href="es/neta.html" title="Enlaza con la página de Proyecto Neta">
-                          <img class="showIco" src="img/ico/logoNeta.png">
-                          Neta
-                        </a></li>
-                        <li><a href="es/downloads.html" title="Enlaza con la página de Descargas">
-                          <img class="showIco" src="img/ico/download.png">
-                          Descargas
-                        </a></li>
-                        <li><a href="es/media.html" title="Enlaza con media">
-                          <img class="showIco" src="img/ico/ico5.png">
-                          Media
-                        </a></li>
-                        <li><a href="#" title="Enlaza con el Blog">
-                          <img class="showIco" src="img/ico/ico4.png">
-                          Blog / Diario
-                        </a></li>
-                        <li><a href="https://github.com/fractal-puppy/Engine/wiki" title="Enlaza con la Wiki" target="_blank">
-                          <img class="showIco" src="img/ico/ico6.png">
-                          Wiki
-                        </a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <div class="row tm-section-pad-top">
+          <div class="col-lg-4">
+            <a href="https://twitter.com/fractalpuppy?ref_src=twsrc%5Etfw" data-show-count="false" title="Twitter link" target="_blank">
+              <!--<i class="fab fa-4x fa-twitter text-center tm-icon"></i>-->
+              <img src="img/sprite_twitter.png" alt="Twitter logo" class="social">
+              <h4 class="text-center tm-text-primary mb-4">Follow @fractalpuppy</h4>
+            </a><script async src="https://platform.twitter.com/widgets.js"></script>
+            <p>
+              If you want to know and be updated about all our new projects and Fractal Puppy
+              life, or if you want to know how <strong>Neta</strong> it is being developed, do not
+              forget to follow us in Twitter, where amazing new videos and pictures will be uploaded about
+              <strong>Neta</strong> evolution.
+            </p>
+          </div>
 
-        <article>
-          <aside>
-            <h3><u>
-                Últimas actualizaciones
-            </u></h3>
-              <div>
-                  <p>
-                      Las últimas actualizaciones realizadas en el desarrollo del proyecto pueden observarse en el
-                      siguiente aparttado.
-                  </p>
-              </div>
-            <h4>Ultima versión</h4>
-            <div>
-              <p>
-                En el siguiente enlace se puede descargar la última versión de
-                <a href="https://github.com/fractal-puppy/Engine/releases" title="Enlace de descarga del juego" target="_blank">Neta</a>
-                <a href="https://github.com/fractal-puppy/Engine/releases" title="Enlace de descarga del juego" target="_blank">
-                    <img class="center2" src="img/neta.png" title="Descarga de la última versión de Neta">
-                </a>
+          <div class="col-lg-4 mt-5 mt-lg-0">
+            <a href="https://www.youtube.com/channel/UCMYUVrNLKy2JrGRKO-5JdWg?view_as=subscriber" title="Link with our Youtube channel" target="_blank">
+              <!--<i class="fab fa-4x fa-youtube text-center tm-icon"></i>-->
+              <img src="img/sprite_youTube.png" alt="Youtube logo" class="social">
+              <h4 class="text-center tm-text-primary mb-4">Youtube</h4>
+            </a>
+            <p>
+              If you want to see our videos, where we explain how we are
+              creating new <strong>Neta</strong> levels, enemies, heroes and  gamep lay well as  painting and programming, do not forget to visit our
+              channel in YouTube, where you can find the latest videos depicting how the design, art and programming is being made!
+            </p>
+          </div>
+          <div class="col-lg-4 mt-5 mt-lg-0">
+          <!--<i class="fas fa-4x fa-city text-center tm-icon"></i>-->
+            <a href="https://www.instagram.com/fractal_puppy/?hl=es" title="Link with Instagram" target="_blank">
+              <img src="img/sprite_instagram.png" alt="Instagram logo" class="social">
+              <h4 class="text-center tm-text-primary mb-4">Follow us in Instagram</h4>
+            </a>
+            <p>
+              We have Instagram too! Follow us in Instagram. There you will find our artists work.
+              Our artists upload almost every day their advances in model design, scenes, textures,
+              and more. They also upload stories showing how they create the models for the game.
+              So if you are interested in the artistic side of the game: FOLLOW US!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="tm-section-pad-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="tm-intro-text-container">
+                <h2 class="tm-text-primary mb-4 tm-section-title">Projects</h2>
+                <p class="mb-4 tm-intro-text">
+                  The Studio is currently working on its very first project: <strong>Neta</strong>! Neta is a <abbr title="Rol-Player Game">RPG</abbr>
+                  inspired in other RPG.
               </p>
+              <p class="mb-5 tm-intro-text">
+                If you wan to know more about this game, you can look inside the project page.
+              </p>
+              <div class="tm-next">
+                <!-- WORKING ON IT! -->
+                <!--<a href="es/personal.html" class="tm-intro-text tm-btn-primary">Meet Us!</a>-->
+                <a href="en/neta.html" class="tm-intro-text tm-btn-primary">Neta Project</a>
+              </div>
             </div>
-            <h4 class="separator">Planning</h4>
-            <div>
-                <p>
-                    Planning del progreso del proyecto.
-                </p>
-            </div>
-            <div class="bigImg">
-              <div class="portaimagen">
-                <div class="gantt">
-                  <img src="img/gantt.png" width="920" height="300" alt="Diagrama de Gantt">
+          </div>
+          <div class="col-lg-6">
+            <img src="img/neta.png" alt="Neta logo" class="img-fluid tm-intro-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media -->
+    <section id="media" class="tm-section-pad-top">
+      <div class="container">
+        <div class="row">
+          <div class="text-center col-12">
+            <h2 class="tm-text-primary tm-section-title mb-4">Media</h2>
+            <!--<p class="mx-auto tm-work-description">
+              Mira nuestros últimos vídeos añadidos en Youtube y nuestras últimas
+              capturas de modelos.
+            </p>-->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"><!-- THIRDVIDEO -->
+            <iframe class="video" src="https://www.youtube.com/embed/rqyhBfCFjik" allowfullscreen></iframe>
+            <h2><i><span>Vertical Slice</span> III</i></h2>
+            <p>
+              Third video of Neta created for the Vertical Slice III. Note that gameplay is more refined. There are different atttacks,
+              three kind of enemies with different skills and behaviours. The navigation has been upgraded, obstacles like trees and
+              tombs are not longer walkable, no cheese allowed!
+            </p>
+            <p>
+              in the <a href="#downloads">dowload</a> section the third demo of <strong>Neta</strong> can be downloaded.
+            </p>
+          </div>
+
+          <div class="col"><!-- SECONDVIDEO -->
+            <!-- COUNTDOWN -->
+            <!--<div id="counter" class="clockText">
+              <a href="javascript:cerrar();">
+                <h2>Soon!</h2>
+                <div id="demo"></div>
+              </a>
+            </div>-->
+
+            <iframe class="video" src="https://www.youtube.com/embed/pEdnuuWsABs" allowfullscreen></iframe>
+            <h2><i><span>Vertical Slice</span> II</i></h2>
+            <p>
+              Second video for Vertical Slice II. Now <strong>Neta</strong> has navigation mesh using the RecastNavigation library
+              and Has been remade to be more colourful, with some parts of it almost finished. The heroe can move around the scene
+              correctly. The hero has now two diferent animations! Run and Strike!
+            </p>
+            <p>
+              In t <a href="#downloads">downloads</a> section anyone can download this second demo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downloads -->
+    <section id="downloads" class="tm-section-pad-top">
+      <div class="container tm-container-gallery">
+        <div class="row">
+          <div class="text-center col-12">
+              <h2 class="tm-text-primary tm-section-title mb-4">Downloads</h2>
+              <!--<p class="mx-auto tm-work-description">
+              </p>-->
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mx-auto tm-gallery-container">
+                    <div class="grid">
+                      <div id="links">
+                        <a title="Link to donwload the first Neta demo" href="https://github.com/fractal-puppy/Engine/releases/tag/0.5" target="_blank">
+                          <figure class="effect-honey tm-gallery-item">
+                            <img src="img/demo1.png" alt="Lady of the Souls" class="img-fluid">
+                            <figcaption>
+                              <h2><i>Demo <span>I</span></i></h2>
+                            </figcaption>
+                          </figure>
+                        </a>
+                        <a title="Link to donwload the second Neta demo" href="https://github.com/fractal-puppy/Engine/releases/tag/v0.2.2" target="_blank">
+                          <figure class="effect-honey">
+                            <img src="img/demo2.png" alt="The heroe" class="img-fluid">
+                            <figcaption>
+                              <h2><i>Demo <span>II</span></i></h2>
+                            </figcaption>
+                          </figure>
+                        </a><!-- THIRDEMO -->
+                        <a href="https://github.com/fractal-puppy/Engine/releases/tag/neta-0.3.1" id="game" title="Link to donwload the third Neta demo" target="_blank">
+                          <figure class="effect-honey tm-gallery-item">
+                            <img src="img/pollo.png" alt="The Cock" class="img-fluid">
+                            <figcaption>
+                              <h2><i>Demo <span>III</span></i></h2>
+                            </figcaption>
+                          </figure>
+                        </a>
+                        <!--<a href="https://docs.google.com/document/d/1-E0z07Gs0U7wmq_FIXJNqaLKbVFJVH4B93kpXHpaiJM/edit?usp=sharing">
+                          <figure class="effect-honey tm-gallery-item">
+                            <img src="img/gdd.png" alt="Portada Game Design Document" class="img-fluid">
+                            <figcaption>
+                              <h2><i>Ver <span>GDD</span></i></h2>
+                            </figcaption>
+                          </figure>
+                        </a>-->
+                      </div>
+                      <!--
+                        <iframe src="https://drive.google.com/file/d/1GdoeVK9ZoApDYirZkKPbExQwva78ihUR/preview"></iframe>
+                      -->
+                      <br>
+                      <p><!-- ENGINEDOWNLOAD -->
+                        In this section anyone can download the last Neta demos. Other material as <a href="https://github.com/fractal-puppy/Engine/releases/tag/0.4.7"
+                        title="Link to Fractal Engine" target="_blank"> <strong>Fractal Engine</strong></a> or <abbr title="Game Vision Document">GVD</abbr> can be donwloaded.
+                      </p>
+                      <p>
+                        Remember that <strong>Fractal Puppy</strong> is the owner of <strong> Fractal Engine</strong>.
+                      </p>
+                      <a id="download-btn" href="en/downloads.html" class="tm-intro-text tm-btn-primary">More donwloads</a>
+                    </div>
                 </div>
-              </div>
             </div>
+          </div>
+      </div>
+    </section>
 
-            <h4 class="separator">Calendario</h4>
-            <di>
-                <p>
-                    Mantente informado de nuestros avances consultando nuestro calendario.
-                </p>
-            </di>
-            <div>
-              <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=indira.kekela%40gmail.com&amp;color=%231B887A&amp;ctz=Europe%2FMadrid" style="border-width:0" width="550" height="300" frameborder="0" scrolling="yes"></iframe>
-              <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NmZpYXV2c25nOWhtYTcwcTEzMjI4YzIyazQgaW5kaXJhLmtla2VsYUBt&amp;tmsrc=indira.kekela%40gmail.com"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_es.gif"></a>
-            </div>
-
-            <h4 class="separator">New Media</h4>
-            <div>
-                <p>
-                    Nuestro último video subido a nuestro canal de You Tube.
-                </p>
-              <!--<iframe width="550" height="309" src="https://www.youtube.com/embed/gA00bdM5oKo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            -->
-                <iframe class="center2" src="https://www.youtube.com/embed/gA00bdM5oKo" frameborder="0" allowfullscreen></iframe>
-            </div>
-
-            <h4 class="separator">Nosotros y las redes</h4>
-            <div class="socialMedia">
-                <p>
-                    No olvides seguirnos en nuestras redes sociales para estar informado de nuestros nuevos proyectos.
-                </p>
-              <a href="https://www.youtube.com/channel/UCMYUVrNLKy2JrGRKO-5JdWg?view_as=subscriber" title="Abre You Tube" target="_blank"><img src="img/ico/youTube.png"></a>
-              <a href="https://twitter.com/FractalPuppy?s=08" title="Abre Twiter" target="_blank"><img src="img/ico/twitter.png"></a>
-              <a href="https://www.instagram.com/fractal_puppy/?hl=es" title="Abre Instagram" target="_blank"><img src="img/ico/instagram.png"></a>
-            </div>
-          </aside>
-
-        <section class="content">
-          <h2>¿Quienes somos?</h2>
-          <div>
-            <img class="center" src="img/giftGrupo.gif" alt="Exposición de Cezanne"/>
-            <p>
-              <strong>Fractal Puppy</strong> es un estudio creado por alumnos del <a href="" title=""><strong>Máster en Diseño, Programación y Creación de Videojuegos</strong></a> de la
-              <a href="https://www.talent.upc.edu/esp/school/ttc/"><abbr title="Universitat Politècnica de Catalunya">UPC</abbr> <i lan="en">School</i></a>.
-            </p>
-            <p>
-              Esta web ha sido creada para mostrar los avances realizados en la creación del trabajo de fin de master por parte del equipo, en ella se podrá observar la agenda, el planteamiento, los <i lan="en">
-				      milestone</i> (calendario), una wiki que será utilizada como <i lan=en"><abbr title="Game Design Document">GDD</abbr></i>. También se mostrará tanto el <i lan="en"><abbr title="Game View Document">GVD</abbr></i>
-              del proyecto final como los creados y descartados por diferentes motivos.
-            </p>
-            <p>
-              Pero un videojuego es más que picar código y pelearse con variables, sentencias, blucles,... También es arte. Por lo que se mostrarán los diferentes modlos generados para el juego por los artistas que 					componen el grupo de creación del videojuego. Por lo que en la parte de arte se podrá ver los vocetos de arte creados así como todo el proceso creativo hasta obtener los modelos finales para el videojuego.
-            </p>
-           </div>
-         </section>
-
-         <section class="content" id="activities">
-           <h2>¿Qué hacemos?</h2>
-           <div>
-             <p>
-               Actualmente estamos desarrollando un videojuego como trabajo final del <strong>Máster en Creación y Diseño de Videojuegos</strong>. Para crear el videojuego no se han utilizado <i lan="en">engine</i> de 					terceros como podría ser Unity o Unreal, sino que somos propietarios del <i lan="en">engine</i> utilizado en el juego. Éste se ha programado de forma colaborativa entre todo el grupo de progrmación 						utilizando el C++ como lenguaje nativo y librerías de terceros.
-             </p>
-             <p>
-               El <i lang="en">engine</i> se encuientra alojado en un repositorio <a href="">Github</a> y tiene una <a href="">licencia</a> MIT. Para su creación se han utilizado los siguientes librerías de terceros:
-             </p>
-             <ul id="lib">
-                <li><a href="http://www.assimp.org/"><abbr lang="en" title="Open Asset Import Libray">Assimp</abbr></a></li>
-                <li><a href="http://www.brofiler.com/" lang="en">Brofiler 1.12</a></li>
-                <li><a href="http://openil.sourceforge.net/" lang="en">DevIL</a></li>
-                <li><a href="https://www.freetype.org/" lang="en">freeType</a></li>
-                <li><a href="http://glew.sourceforge.net/"><abbr lang="en" title="OpenGL Extension Wrangler">glew 2.1.0</abbr></a></li>
-                <li><a href="https://github.com/ocornut/imgui">ImGui</a></li>
-                <li><a href="https://github.com/CedricGuillemet/ImGuizmo">ImGuizmo</a></li>
-                <li><a href)"https://github.com/juj/MathGeoLib">MathGeoLib</a></li>
-                <li><a href="www.FluidStudios.com/publications.html">mmgr</a></li>
-                <li><a href="https://github.com/paceholder/nodeeditor">NodeEditor</a></li>
-                <li><a href="http://www.pcg-random.org/using-pcg-cpp.html">pcg cpp 0.98</a></li>
-                <li><a href="https://icculus.org/physfs/">physfs 3.0.1</a></li>
-                <li><a href="https://github.com/Tencent/rapidjson">rapidjson 1.1.0</a></li>
-                <li><a href="https://github.com/recastnavigation">Recast</li></a>
-                <li><a href<="https://www.libsdl.org/"><abbr lang="en" title="Simple DirectMediaLayer">SDL</abbr></a></li>
-                <li><a href="https://www.libsdl.org/projects/SDL_image/">SDL_image</a></li>
-              </ul>
-            <p>
-              Para la creación de los modelos y el diseño de niveles se ha utilizado el 3DS Max, que se ha importado al motor del juego mediante archivos .fbx aunque el motor crea sus propios archivos para trabajar de
-              una forma más eficiente y rápida
-            </p>
-          </section>
-
-          <section id="visit" class="content">
-            <h2>Nuestro equipo</h2>
-            <div>
-              <p>
-                El equipo está compuesto por 14 programadores y 7 artistas. A pesar de que todos somos estudiantes del mismo Máster, a parte de realizar los trabajos de programación y de diseño de los modelos y creación 					de animaciones, cada componente del equipo desarrolla un rol diferente. De esta forma, alguno de nosotros desarrollan roles de Productores, líderes de Programación, Líderes de Diseño,... A continuación se 					puede observar el organigrama y nuestro funcionamiento con el nombre de cada uno de los integrantes.
+    <!-- Presskit -->
+    <section id="presskit" class="tm-section-pad-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="tm-intro-text-container">
+                <h2 class="tm-text-primary mb-4 tm-section-title">Presskit</h2>
+                <p class="mb-4 tm-intro-text">
+                  If you are a journalist, this is your section. Here you will find all the information provided <body>
+                  <strong>Fractal Puppy</strong> to the press.
               </p>
-              <img class="center" id="org" src="img/organization.png" alt="Organigrama">
+              <!--<div class="tm-next">
+                <a href="en/presskit.html" class="tm-intro-text tm-btn-primary">Presskit</a>
+              </div>-->
             </div>
-          </section>
-        </article>
+          </div>
+          <div class="col-lg-6">
+            <a href="en/presskit.html">
+              <img src="img/news-644850_1920.png" alt="Neta logo" class="img-fluid tm-intro-img" id="press-icon"/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <footer>
-            <div id="contact">
-                <p>Fractal Puppy</p>
-                <p>Plaza del Poblenou, 1. 08018 Barcelona</p>
-                <p><i class="fa fa-phone"></i>--</p>
-                <p><i class="fa fa-envelope"></i>--</p>
-                <a href="" title="Enlace a twitter"><span class="fab fa-twitter fa-2x"></span></a>
-                <a href="" title="Enlace a facebool"><span class="fab fa-facebook fa-2x"></span></a>
-                <a href="" title="Enlace a instagram"><span class="fab fa-instagram fa-2x"></span></a>
-                <a href="" title="Enlace a youtube"><span class="fab fa-youtube fa-2x"></span></a>
-            </div>
-            <form action="submit" method="get" id="footer_form">
-                <p>Formulario de contacto</p>
-                <ul>
-                    <li>
-                        <label for="mail">Correo electrónico</label>
-                        <input id="mail" name="mail" type="email"/>
-                    </li>
-                    <li>
-                        <label for="policy" class="accept">
-                            <input id="policy" name="policy" type="checkbox" title="Debe seleccionar la casilla" required/>
-                            Acepto expresamente la política de protección de datos.
-                        </label>
-                    </li>
-                    <li>
-                        <input id="submit" type="submit" value="Enviar"/>
-                    </li>
-                </ul>
-            </form>
-
-            <div id="info">
-                <img src="img/ico.png" alt="icono de Fractal Puppy">
-                <div>
-                    <p><a href="">Quiénes somos</a></p>
-                    <p><a href="">Política de privacidad</a></p>
-                    <p><a href="">Aviso legal</a></p>
-                    <p><a href="">Cookies</a></p>
-		    <p><a href="">Mapa web</a></p>
-                 </div>
-            </div>
-
-            <div id="credits">
-                <p><a href="">Créditos</a></p>
-                <p>
-                    &copy; Fractal Puppy; Código sujeto a Licencia MIT
-                    <a href="https://www.metmuseum.org/art/collection/search#!?searchField=All&showOnly=openAccess&sortBy=relevance&offset=0&pageSize=0"
-                       title="Enlace con la página de UPC School">
-                        UPC School (poner logo)
-                    </a>
+    <!-- Contact -->
+    <section id="contact" class="tm-section-pad-top tm-parallax-2">
+      <div class="container tm-container-contact">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-4 tm-section-title">Contact</h2>
+                <div class="mb-5 tm-underline">
+                  <div class="tm-underline-inner"></div>
+                </div>
+                <p class="mb-5">
+                  Fractal Puppy is located in Barcelona and with a strong presence in Social Networks
+                  where anyone can follow us to get in touch or be informed about our projects.
                 </p>
             </div>
-        </footer>
-    </body>
+
+            <!--<div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
+              <a href="tel:0100200340" class="tm-contact-item-link">
+                  <i class="fas fa-3x fa-phone mr-4"></i>
+                  <span class="mb-0">93.020-03-04</span>
+              </a>
+            </div>-->
+            <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
+              <a title="send us an e-mail" href="mailto:fractalpuppy@gmail.com" class="tm-contact-item-link">
+                  <i class="fas fa-3x fa-envelope mr-4"></i>
+                  <span class="mb-0">fractalpuppy@gmail.com</span>
+              </a>
+            </div>
+            <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
+              <a href="https://drive.google.com/open?id=1yVFeKCBsU-kiTSFuiqgOaCn7mS9K3084&usp=sharing" target="_blank" title="Link to Fractal Puppy location in Barcelona" class="tm-contact-item-link">
+                  <i class="fas fa-3x fa-map-marker-alt mr-4"></i>
+                  <span class="mb-0">Fractal Puppy location</span>
+              </a>
+            </div>
+            <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
+              <form action="mailto:fractalpuppy@gmailcom" method="get">
+                <input name="email" type="email" placeholder="E-mail address" class="tm-input" required />
+                <button type="submit" class="btn tm-btn-submit">Enviar</button>
+              </form>
+            </div>
+        </div>
+      </div>
+      <footer class="text-center small tm-footer">
+        <p class="mb-0">
+          Copyright &copy; 2019 Fractal Puppy
+        </p>
+      </footer>
+    </section>
+
+    <!-- Modal NEW--><!-- INTROVIDEO -->
+    <div class="modal fade in fullscreen-modal" id="ModalNew" tabindex="-1" role="dialog" aria-labelledby="ModalNew" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLongTitle">Nuevo Vídeo</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body video-responsive">
+            <iframe class="video" id="video-modal-body" src="https://www.youtube.com/embed/pEdnuuWsABs" allow="autoplay;" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/all.js"></script>
+    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+
+      function getOffSet(){
+        var _offset = 450;
+        var windowHeight = window.innerHeight;
+
+        if(windowHeight > 500) {
+          _offset = 400;
+        }
+        if(windowHeight > 680) {
+          _offset = 300
+        }
+        if(windowHeight > 830) {
+          _offset = 210;
+        }
+
+        return _offset;
+      }
+
+      function setParallaxPosition($doc, multiplier, $object){
+        var offset = getOffSet();
+        var from_top = $doc.scrollTop(),
+          bg_css = 'center ' +(multiplier * from_top - offset) + 'px';
+        $object.css({"background-position" : bg_css });
+      }
+
+      // Parallax function
+      // Adapted based on https://codepen.io/roborich/pen/wpAsm
+      var background_image_parallax = function($object, multiplier, forceSet){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        // $object.css({"background-attatchment" : "fixed"});
+
+        if(forceSet) {
+          setParallaxPosition($doc, multiplier, $object);
+        } else {
+          $(window).scroll(function(){
+            setParallaxPosition($doc, multiplier, $object);
+          });
+        }
+      };
+
+      var background_image_parallax_2 = function($object, multiplier){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        $object.css({"background-attachment" : "fixed"});
+        $(window).scroll(function(){
+          var firstTop = $object.offset().top,
+              pos = $(window).scrollTop(),
+              yPos = Math.round((multiplier * (firstTop - pos)) - 186);
+
+          var bg_css = 'center ' + yPos + 'px';
+
+          $object.css({"background-position" : bg_css });
+        });
+      };
+
+      $(function(){
+        // Hero Section - Background Parallax
+        background_image_parallax($(".tm-parallax"), 0.30, false);
+        background_image_parallax_2($("#contact"), 0.80);
+
+        // Handle window resize
+        window.addEventListener('resize', function(){
+          background_image_parallax($(".tm-parallax"), 0.30, true);
+        }, true);
+
+        // Detect window scroll and update navbar
+        $(window).scroll(function(e){
+          if($(document).scrollTop() > 120) {
+            $('.tm-navbar').addClass("scroll");
+          } else {
+            $('.tm-navbar').removeClass("scroll");
+          }
+        });
+
+        // Close mobile menu after click
+        $('#tmNav a').on('click', function(){
+          $('.navbar-collapse').removeClass('show');
+        })
+
+        // Scroll to corresponding section with animation
+        $('#tmNav').singlePageNav();
+
+        // Add smooth scrolling to all links
+        // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+        $("a").on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 400, function(){
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+
+        // Pop up
+        $('.tm-gallery').magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: { enabled: true }
+        });
+
+        // Gallery
+        $('.tm-gallery').slick({
+          dots: true,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          responsive: [
+          {
+            breakpoint: 1199,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+        });
+      });
+    </script>
+  </body>
 </html>

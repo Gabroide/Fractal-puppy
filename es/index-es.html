@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fractal Puppy</title>
+
+    <!-- Icon -->
+	  <link rel="shortcut icon" href="img/favicon.ico">
+
+    <meta name="keywords" content="Fractal Puppy fractalpuppy videojuegos 3D neta master UPC" />
+    <meta name="description" content="Fractal Puppy es un grupo de estudiantes del Master de Creación y Diseño de
+    Videojuegos de la UPC que han desarrollado un motor propio para crear un Videojuego como TFM." />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-responsive.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/landing-style.css" />
+    <!--
+	The Town
+	https://templatemo.com/tm-525-the-town
+	-->
+  <style>
+    a{text-decoration: none;}
+
+    #counter{position: absolute;top: 150px; left: 15vw; z-index: 10;}
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+    .clockText{
+      font-family: "Montserrat";
+	    text-align: center;
+	    color: #FFF;
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	    justify-content: center;
+	    //height: 100vh;
+	    letter-spacing: 1px;
+    }
+
+    .clockText h2
+    {
+      background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+	    background-size: cover;
+	    color: transparent;
+	    -moz-background-clip: text;
+	    -webkit-background-clip: text;
+	    text-transform: uppercase;
+	    font-size: 40px;
+	    line-height: 1.5;//.75;
+	    margin: 10px 0;
+    }
+
+    #demo
+    {
+      color: black;
+      font-weight: bolder;
+    }
+
+    </style>
+
+  <script>
+    $(document).ready(function(){
+      $("#myModal").on("hidden.bs.modal",function(){
+        $("#iframeYoutube").attr("src","#");
+      })
+    })
+
+    function changeVideo(vId){
+      var iframe=document.getElementById("iframeYoutube");
+      iframe.src="https://www.youtube.com/embed/"+vId;
+
+      $("#myModal").modal("show");
+      $(this).find('video')[0].pause();
+    }
+
+    /* Clock */
+    function cerrar() {
+      div = document.getElementById('counter');
+      div.style.display = 'none';
+    }
+
+    </script>
+
+    <script type="text/javascript" src="js/underconstruction.js"></script>
+
+  </head>
+
+  <body onload="countdown();"> <!--onload="abrir()">-->
+    <!-- Hero section -->
+    <section id="hero" class="text-white tm-font-big tm-parallax">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
+        <div class="container">
+          <div class="tm-next">
+              <a href="#hero" class="navbar-brand"><img src="img/favico.png" alt="Logo Fractal Puppy" class="icon">Fractal Puppy</a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars navbar-toggler-icon"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#home">Inicio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#media">Media</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#downloads">Descargas</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="es/engine.html" lang="en">Engine</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="#contact">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div id="counter" class="clockText">
+        <a href="javascript:cerrar();">
+          <h2>Cuenta atrás para Neta</h2>
+          <div id="demo"></div>
+        </a>
+      </div>
+
+
+      <div class="text-center tm-hero-text-container">
+        <div class="tm-hero-text-container-inner">
+          <div class="no-color">
+            <a class="btn btn-primary" data-toggle="modal" data-target="#ModalNew"
+            title="Ventana con el último vídeo creado" onclick="document.getElementsByClass('video').play();">
+              <span class="big-icon">
+                <i class="fa fa-play"></i>
+              </span>
+            </a>
+            <h2 class="tm-hero-title">Fractal Puppy</h2>
+            <p class="tm-hero-subtitle">
+              Creando el videojuego del futuro
+              <!--<br />-->
+            </p>
+        </div>
+      </div>
+
+      <div class="tm-next tm-intro-next">
+        <a href="#home" class="text-center tm-down-arrow-link">
+          <i class="fas fa-3x fa-caret-down tm-down-arrow"></i>
+        </a>
+      </div>
+    </div>
+    </section>
+
+    <section id="home" class="tm-section-pad-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="img/giftGrupo.gif" alt="Foto de grupo" class="img-fluid tm-intro-img" />
+          </div>
+          <div class="col-lg-6">
+            <div class="tm-intro-text-container">
+                <h2 class="tm-text-primary mb-4 tm-section-title">Inicio</h2>
+                <p class="mb-4 tm-intro-text">
+                  <strong>Fractal Puppy</strong> es un estudio creado por
+                  alumnos del <strong>Máster de Diseño y Creación de Videojuego</strong>
+                  de la <abbr title="Universidad Politécnica de Caraluña">
+                    <a href="https://www.talent.upc.edu/" title="Obre un enlace con la UPC School" target="_blank">UPC</a></abbr>
+              </p>
+                <p class="mb-5 tm-intro-text">
+                  Actualente estamos desarrollando un videojuego con tectnología
+                  propia que puede ser descargado en la zona de
+                  <a href="es/downloads.html">descargas</a>.
+                  <div class="tm-next">
+                  <a href="es/personal.html" class="tm-intro-text tm-btn-primary">Conócenos</a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row tm-section-pad-top">
+          <div class="col-lg-4">
+            <a href="https://twitter.com/fractalpuppy?ref_src=twsrc%5Etfw" data-show-count="false" title="Enlaza con Twitter" target="_blank">
+              <!--<i class="fab fa-4x fa-twitter text-center tm-icon"></i>-->
+              <img src="img/sprite_twitter.png" alt="Logo de Twitter" class="social">
+              <h4 class="text-center tm-text-primary mb-4">Síguenos @fractalpuppy</h4>
+            </a><script async src="https://platform.twitter.com/widgets.js"></script>
+            <p>
+              Si quieres está informado de todas las novedades sobre nuestro
+              estudio, o saber como va la evolución de nuestro proyecto. No
+              olvides seguirnos en nuestro canal de Twitter donde os iremos
+              informando de nuestras novedades.
+            </p>
+          </div>
+
+        <div class="col-lg-4 mt-5 mt-lg-0">
+          <a href="https://www.youtube.com/channel/UCMYUVrNLKy2JrGRKO-5JdWg?view_as=subscriber" title="Enlaza con nuestro canal de Youtube" target="_blank">
+            <!--<i class="fab fa-4x fa-youtube text-center tm-icon"></i>-->
+            <img src="img/sprite_youTube.png" alt="Logo de Youtube" class="social">
+            <h4 class="text-center tm-text-primary mb-4">Nuestro Canal</h4>
+          </a>
+          <p>
+            Si quieres ver nuestros últimos vídeos y observar como van evolucionandp
+            las pantalla, los héroes, villanos, dinámicas de juego y muchas otras
+            cosas, no te pierdas nuestro canal de Youtube.
+          </p>
+        </div>
+        <div class="col-lg-4 mt-5 mt-lg-0">
+          <!--<i class="fas fa-4x fa-city text-center tm-icon"></i>-->
+          <a href="https://www.instagram.com/fractal_puppy/?hl=es" title="Enlace a Instafram" target="_blank">
+            <img src="img/sprite_instagram.png" alt="Logo de Instagram" class="social">
+            <h4 class="text-center tm-text-primary mb-4">Síguenos en Instagram</h4>
+          </a>
+          <p>
+            ¡También tenemos Instagram! Síguenos en nuestra cuenta de sprite_instagram para ver
+            nuestros últimos modelos y también conocernos.
+          </p>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Media -->
+    <section id="media" class="tm-section-pad-top">
+      <div class="container">
+        <div class="row">
+          <div class="text-center col-12">
+            <h2 class="tm-text-primary tm-section-title mb-4">Media</h2>
+            <p class="mx-auto tm-work-description">
+              Mira nuestros últimos vídeos añadidos en Youtube y nuestras últimas
+              capturas de modelos.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <iframe class="video" src="https://www.youtube.com/embed/CWPKZnC0KKM" allowfullscreen></iframe>
+            <h2><i><span lang="en">Vertical Slide</span> 1</i></h2>
+            <p>
+              Vídeo de la Vertical Slide 1 donde pueden verse las dimensiones
+              del primer nivel y también se intuye como será el decorado y la
+              Interfaz del Usuario.
+            </p>
+            <p>
+              En el apartado de <a href="#downloads">descargas</a> puede bajarse esta primera demo.
+            </p>
+          </div>
+
+          <div class="col">
+            <iframe class="video" src="https://www.youtube.com/embed/L5IbIEUQndI" allowfullscreen></iframe>
+            <h2><i><span lang="en">Vertical Slide</span> 2</i></h2>
+            <p>
+              Vídeo del segundo <a lang="es">Vertical Slide</a>. Se ha incorporado al juego la navegación
+              y se ha enriquecido el decorado, con partes del mismo ya finalizadas. El personaje ya puede
+              moverse por el decorado de forma correcta y se han incorporado las animaciones de correr
+              y atacar.
+            </p>
+            <p>
+              En el apartado de <a href="#downloads">descargas</a> puede bajarse esta primera demo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Downloads -->
+    <section id="downloads" class="tm-section-pad-top">
+      <div class="container tm-container-gallery">
+        <div class="row">
+          <div class="text-center col-12">
+              <h2 class="tm-text-primary tm-section-title mb-4">Descargas</h2>
+              <p class="mx-auto tm-work-description">
+                Aquí podrás descargarte las últimas demos de <strong>Neta</strong>
+                y toda la documentación relacionada con el juego como
+                <abbr lang="en" title="Game Vision Document">VGD</abbr>,
+                <abbr lang="en" title="Game Design Document">GDD</abbr>.
+              </p>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mx-auto tm-gallery-container">
+                    <div class="grid">
+                      <div id="links">
+                        <a title="Enlace descarga Demo 1 de Neta" href="https://github.com/fractal-puppy/Engine/releases/tag/0.5" target="_blank">
+                          <figure class="effect-honey tm-gallery-item">
+                            <img src="img/demo1.png" alt="Lady of the Souls" class="img-fluid">
+                            <figcaption>
+                              <h2><i>Demo <span>I</span></i></h2>
+                            </figcaption>
+                          </figure>
+                        </a>
+                        <a href="https://github.com/fractal-puppy/Engine/releases/tag/v0.2.2">
+                          <figure class="effect-honey">
+                            <img src="img/demo2.png" alt="El héroe" class="img-fluid">
+                            <figcaption>
+                              <h2><i>Demo <span>II</span></i></h2>
+                            </figcaption>
+                          </figure>
+                        </a>
+                        <a href="#" id="game" title="Enlace descarga Demo 3" target="_blank">
+                          <figure class="effect-honey tm-gallery-item">
+                            <img src="img/pollo.png" alt="Pollo" class="img-fluid">
+                            <figcaption>
+                              <h2><i>Demo <span>III</span></i></h2>
+                            </figcaption>
+                          </figure>
+                        </a>
+                        <!--<a href="https://docs.google.com/document/d/1-E0z07Gs0U7wmq_FIXJNqaLKbVFJVH4B93kpXHpaiJM/edit?usp=sharing">
+                          <figure class="effect-honey tm-gallery-item">
+                            <img src="img/gdd.png" alt="Portada Game Design Document" class="img-fluid">
+                            <figcaption>
+                              <h2><i>Ver <span>GDD</span></i></h2>
+                            </figcaption>
+                          </figure>
+                        </a>-->
+                      </div>
+                      <!--
+                        <iframe src="https://drive.google.com/file/d/1GdoeVK9ZoApDYirZkKPbExQwva78ihUR/preview"></iframe>
+                      -->
+                      <br>
+                      <p>
+                        En la sección de descargar podrás descargar más material como el <i lang="en">
+                        engine</i> utilizado para crear el juego y que ha sido la base del proyecto del Máster
+                        al haber sido programado totalmente por los alumnos.
+                      </p>
+                      <a id="download-btn" href="es/downloads.html" class="tm-intro-text tm-btn-primary">More downloads</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="tm-section-pad-top tm-parallax-2">
+      <div class="container tm-container-contact">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-4 tm-section-title">Contacto</h2>
+                <div class="mb-5 tm-underline">
+                  <div class="tm-underline-inner"></div>
+                </div>
+                <p class="mb-5">
+                  Estamos ubicados en Barcelona y con constante presencia en las diferentes redes sociales
+                  donde se nos puee serguir para estar informados de nuestros proyectos y sus evoluciones.
+                </p>
+            </div>
+
+            <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
+              <a href="tel:0100200340" class="tm-contact-item-link">
+                  <i class="fas fa-3x fa-phone mr-4"></i>
+                  <span class="mb-0">93.020-03-04</span>
+              </a>
+            </div>
+            <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
+              <a href="mailto:fractalpuppy@gmail.com" class="tm-contact-item-link">
+                  <i class="fas fa-3x fa-envelope mr-4"></i>
+                  <span class="mb-0">fractalpuppy@gmail.com</span>
+              </a>
+            </div>
+            <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
+              <a href="https://drive.google.com/open?id=1yVFeKCBsU-kiTSFuiqgOaCn7mS9K3084&usp=sharing" target="_blank" title="Abre ubicaciñon de Fractal Puppy" class="tm-contact-item-link">
+                  <i class="fas fa-3x fa-map-marker-alt mr-4"></i>
+                  <span class="mb-0">Nuestra localización</span>
+              </a>
+            </div>
+            <div class="col-sm-12 col-md-6 d-flex align-items-center tm-contact-item">
+              <form action="mailto:fractalpuppy@gmailcom" method="get">
+                <input name="email" type="email" placeholder="Introduzca su correo" class="tm-input" required />
+                <button type="submit" class="btn tm-btn-submit">Enviar</button>
+              </form>
+            </div>
+        </div>
+      </div>
+      <footer class="text-center small tm-footer">
+          <p class="mb-0">
+            Copyright &copy; 2019 Fractal Puppy
+          </p><!--
+            - Design: <a rel="nofollow" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
+          </p>-->
+        </footer>
+    </section>
+
+    <!-- Modal NEW-->
+    <div class="modal fade in fullscreen-modal" id="ModalNew" tabindex="-1" role="dialog" aria-labelledby="ModalNew" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLongTitle">Nuevo Vídeo</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body video-responsive">
+            <iframe class="video" id="video-modal-body" src="https://www.youtube.com/embed/pEdnuuWsABs" allow="autoplay;" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/all.js"></script>
+    <script src="js/magnific-popup.min.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="slick/slick.min.js"></script>
+    <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+
+      function getOffSet(){
+        var _offset = 450;
+        var windowHeight = window.innerHeight;
+
+        if(windowHeight > 500) {
+          _offset = 400;
+        }
+        if(windowHeight > 680) {
+          _offset = 300
+        }
+        if(windowHeight > 830) {
+          _offset = 210;
+        }
+
+        return _offset;
+      }
+
+      function setParallaxPosition($doc, multiplier, $object){
+        var offset = getOffSet();
+        var from_top = $doc.scrollTop(),
+          bg_css = 'center ' +(multiplier * from_top - offset) + 'px';
+        $object.css({"background-position" : bg_css });
+      }
+
+      // Parallax function
+      // Adapted based on https://codepen.io/roborich/pen/wpAsm
+      var background_image_parallax = function($object, multiplier, forceSet){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        // $object.css({"background-attatchment" : "fixed"});
+
+        if(forceSet) {
+          setParallaxPosition($doc, multiplier, $object);
+        } else {
+          $(window).scroll(function(){
+            setParallaxPosition($doc, multiplier, $object);
+          });
+        }
+      };
+
+      var background_image_parallax_2 = function($object, multiplier){
+        multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
+        multiplier = 1 - multiplier;
+        var $doc = $(document);
+        $object.css({"background-attachment" : "fixed"});
+        $(window).scroll(function(){
+          var firstTop = $object.offset().top,
+              pos = $(window).scrollTop(),
+              yPos = Math.round((multiplier * (firstTop - pos)) - 186);
+
+          var bg_css = 'center ' + yPos + 'px';
+
+          $object.css({"background-position" : bg_css });
+        });
+      };
+
+      $(function(){
+        // Hero Section - Background Parallax
+        background_image_parallax($(".tm-parallax"), 0.30, false);
+        background_image_parallax_2($("#contact"), 0.80);
+
+        // Handle window resize
+        window.addEventListener('resize', function(){
+          background_image_parallax($(".tm-parallax"), 0.30, true);
+        }, true);
+
+        // Detect window scroll and update navbar
+        $(window).scroll(function(e){
+          if($(document).scrollTop() > 120) {
+            $('.tm-navbar').addClass("scroll");
+          } else {
+            $('.tm-navbar').removeClass("scroll");
+          }
+        });
+
+        // Close mobile menu after click
+        $('#tmNav a').on('click', function(){
+          $('.navbar-collapse').removeClass('show');
+        })
+
+        // Scroll to corresponding section with animation
+        $('#tmNav').singlePageNav();
+
+        // Add smooth scrolling to all links
+        // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+        $("a").on('click', function(event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 400, function(){
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+
+        // Pop up
+        $('.tm-gallery').magnificPopup({
+          delegate: 'a',
+          type: 'image',
+          gallery: { enabled: true }
+        });
+
+        // Gallery
+        $('.tm-gallery').slick({
+          dots: true,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          responsive: [
+          {
+            breakpoint: 1199,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+        });
+      });
+    </script>
+  </body>
+</html>

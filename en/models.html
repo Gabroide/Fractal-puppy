@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fractal Puppy | Models</title>
+
+    <!-- Icon -->
+	  <link rel="shortcut icon" href="../img/favicon.ico">
+
+    <meta name="keywords" content="Fractal Puppy fractalpuppy videogames 3D neta master UPC C++ engine" />
+    <meta name="description" content="Fractal Puppy is a group of young programmers and artist
+    formed in a UPC master about videogames we are developing a videogame with ut own engine." />
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style-responsive.css" />
+    <link rel="stylesheet" href="../css/magnific-popup.css" />
+
+    <link rel="stylesheet" href="../fontawesome-5.5/css/all.min.css" />
+    <link rel="stylesheet" href="../slick/slick.css">
+    <link rel="stylesheet" href="../slick/slick-theme.css">
+    <link rel="stylesheet" href="../magnific-popup/magnific-popup.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/landing-style.css" />
+
+    <style>
+    #modelcontent{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 0 1 calc(50% - 1em);
+
+      padding: 0;
+      border: 1px solid #d9d9d9;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: .5em;
+    }
+
+    .item{
+      text-align: center;
+    }
+
+    .item iframe{
+      margin: 5% 0 0 0;
+      width: 70vw;
+      height: 50vh;
+    }
+
+    footer{
+      height: 5vh;
+    }
+      @import url('https://fonts.googleapis.com/css?family=Montserrat');
+    </style>
+  </head>
+
+  <body>
+    <!-- Hero section -->
+    <sectionclass="text-white tm-font-big">
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-md tm-navbar" id="tmNav">
+        <div class="container">
+          <div class="tm-next">
+              <a href="../index.html" class="navbar-brand"><img src="../img/favico.png" alt="Fractal Puppy logo" class="icon">Fractal Puppy</a>
+          </div>
+
+          <div> <!--class="collapse navbar-collapse" id="navbarSupportedContent">
+            --><ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="../index.html#home">The studio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="../index.html#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="../index.html#media">Media</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="../index.html#downloads">Downloads</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="../index.html#presskit">Presskit</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link tm-nav-link" href="../index.html#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section  id="modelcontent">
+			<div class="item item1">
+        <iframe src="models/pollo.html" allowfullscreen allowvr onmousewheel=""></iframe>
+        </br>
+        <a href="models/pollo.html" target="_blank" title="Link to Pollo model"><h2>Expand Pollo</h2></a>
+        <p class="descirption">Author:</p>
+      </div>
+      <div class="item item2">
+        <iframe src="models/hero.html" allowfullscreen allowvr onmousewheel=""></iframe>
+        </br>
+        <a href="models/hero.html" target="_blank" title="Link to Hero model"><h2>Expand Hero</h2></a>
+        <p class="descirption">Author: Jorge Rodrigues</p>
+      </div>
+      <div class="item item3">
+        <iframe src="models/smallenemy.html" allowfullscreen allowvr onmousewheel=""></iframe>
+        </br>
+        <a href="models/smallenemy.html" target="_blank" title="Link to Small Enemy model"><h2>Expand Small Enemy</h2></a>
+        <p class="descirption">Author: </p>
+      </div>
+
+    </section>
+    <footer></footer>
+
+    <script src="../../js/all.js"></script>
+    <script src="../../js/magnific-popup.min.js"></script>
+    <script src="../../js/jquery-1.9.1.min.js"></script>
+    <script src="../../slick/slick.min.js"></script>
+    <script src="../../magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="../../js/jquery.singlePageNav.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script>
+
+      function getOffSet(){
+        var _offset = 450;
+        var windowHeight = window.innerHeight;
+
+        if(windowHeight > 500) {
+          _offset = 400;
+        }
+        if(windowHeight > 680) {
+          _offset = 300
+        }
+        if(windowHeight > 830) {
+          _offset = 210;
+        }
+
+        return _offset;
+      }
+
+      // Close mobile menu after click
+        $('#tmNav a').on('click', function(){
+          $('.navbar-collapse').removeClass('show');
+        })
+
+        // Gallery
+        $('.tm-gallery').slick({
+          dots: true,
+          infinite: false,
+          slidesToShow: 5,
+          slidesToScroll: 2,
+          responsive: [
+          {
+            breakpoint: 1199,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+        });
+      });
+
+      function extractQuery() {
+
+			var p = window.location.search.indexOf( '?q=' );
+
+			if ( p !== - 1 ) {
+
+				return window.location.search.substr( 3 );
+
+			}
+
+			return '';
+
+		}
+
+		var panel = document.getElementById( 'panel' );
+		var content = document.getElementById( 'content' );
+		var viewer = document.getElementById( 'viewer' );
+
+		var filterInput = document.getElementById( 'filter' );
+		var exitSearchButton = document.getElementById( 'exitSearchButton' );
+
+		var expandButton = document.getElementById( 'expandButton' );
+		expandButton.addEventListener( 'click', function ( event ) {
+
+			event.preventDefault();
+			panel.classList.toggle( 'open' );
+
+		} );
+
+		var panelScrim = document.getElementById( 'panelScrim' );
+		panelScrim.onclick = function ( event ) {
+
+			event.preventDefault();
+			panel.classList.toggle( 'open' );
+
+		};
+
+		// iOS iframe auto-resize workaround
+
+		if ( /(iPad|iPhone|iPod)/g.test( navigator.userAgent ) ) {
+
+			viewer.style.width = getComputedStyle( viewer ).width;
+			viewer.style.height = getComputedStyle( viewer ).height;
+			viewer.setAttribute( 'scrolling', 'no' );
+
+		}
+
+		var container = document.createElement( 'div' );
+		content.appendChild( container );
+
+		var viewSrcButton = document.getElementById( 'button' );
+		viewSrcButton.style.display = 'none';
+
+		var links = {};
+		var selected = null;
+
+		function createLink( file ) {
+
+			var link = document.createElement( 'a' );
+			link.className = 'link';
+			link.href = file + '.html';
+			link.textContent = getName( file );
+			link.setAttribute( 'target', 'viewer' );
+			link.addEventListener( 'click', function ( event ) {
+
+				if ( event.button !== 0 || event.ctrlKey || event.altKey || event.metaKey ) return;
+
+				selectFile( file );
+
+			} );
+
+			return link;
+
+		}
+
+		for ( var key in files ) {
+
+			var section = files[ key ];
+
+			var header = document.createElement( 'h2' );
+			header.textContent = key;
+			header.setAttribute( 'data-category', key );
+			container.appendChild( header );
+
+			for ( var i = 0; i < section.length; i ++ ) {
+
+				var file = section[ i ];
+
+				var link = createLink( file );
+				container.appendChild( link );
+
+				links[ file ] = link;
+
+			}
+
+		}
+
+		function loadFile( file ) {
+
+			selectFile( file );
+			viewer.src = file + '.html';
+
+		}
+
+		function selectFile( file ) {
+
+			if ( selected !== null ) links[ selected ].classList.remove( 'selected' );
+
+			links[ file ].classList.add( 'selected' );
+
+			window.location.hash = file;
+			viewer.focus();
+
+			panel.classList.remove( 'open' );
+
+			selected = file;
+
+			// Reveal "View source" button and set attributes to this example
+			viewSrcButton.style.display = '';
+			viewSrcButton.href = 'https://github.com/mrdoob/three.js/blob/master/examples/' + selected + '.html';
+			viewSrcButton.title = 'View source code for ' + getName( selected ) + ' on GitHub';
+
+		}
+
+		if ( window.location.hash !== '' ) {
+
+			loadFile( window.location.hash.substring( 1 ) );
+
+		}
+
+		// filter
+		filterInput.onfocus = function ( event ) {
+
+			panel.classList.add( 'searchFocused' );
+
+		};
+
+		filterInput.onblur = function ( event ) {
+
+			if ( filterInput.value === '' ) {
+
+				panel.classList.remove( 'searchFocused' );
+
+			}
+
+		};
+
+		exitSearchButton.onclick = function ( event ) {
+
+			filterInput.value = '';
+			updateFilter();
+			panel.classList.remove( 'searchFocused' );
+
+		};
+
+		filterInput.addEventListener( 'input', function () {
+
+			updateFilter();
+
+		} );
+
+		function updateFilter() {
+
+			var v = filterInput.value;
+
+			if ( v !== '' ) {
+
+				window.history.replaceState( {}, '', '?q=' + v + window.location.hash );
+
+			} else {
+
+				window.history.replaceState( {}, '', window.location.pathname + window.location.hash );
+
+			}
+
+			var exp = new RegExp( v, 'gi' );
+
+			for ( var key in files ) {
+
+				var section = files[ key ];
+
+				for ( var i = 0; i < section.length; i ++ ) {
+
+					filterExample( section[ i ], exp );
+
+				}
+
+			}
+
+			layoutList();
+
+		}
+
+		function filterExample( file, exp ) {
+
+			var link = links[ file ];
+			var name = getName( file );
+			var res = file.match( exp );
+			var text;
+
+			if ( res && res.length > 0 ) {
+
+				link.classList.remove( 'hidden' );
+
+				for ( var i = 0; i < res.length; i ++ ) {
+
+					text = name.replace( res[ i ], '<b>' + res[ i ] + '</b>' );
+
+				}
+
+				link.innerHTML = text;
+
+			} else {
+
+				link.classList.add( 'hidden' );
+				link.innerHTML = name;
+
+			}
+
+		}
+
+		function getName( file ) {
+
+			var name = file.split( '_' );
+			name.shift();
+			return name.join( ' / ' );
+
+		}
+
+		function layoutList() {
+
+			for ( var key in files ) {
+
+				var collapsed = true;
+
+				var section = files[ key ];
+
+				for ( var i = 0; i < section.length; i ++ ) {
+
+					var file = section[ i ];
+
+					if ( links[ file ].classList.contains( 'hidden' ) === false ) {
+
+						collapsed = false;
+						break;
+
+					}
+
+				}
+
+				var element = document.querySelector( 'h2[data-category="' + key + '"]' );
+
+				if ( collapsed ) {
+
+					element.classList.add( 'hidden' );
+
+				} else {
+
+					element.classList.remove( 'hidden' );
+
+				}
+
+			}
+
+		}
+
+		filterInput.value = extractQuery();
+		updateFilter();
+    </script>
+  </body>
+</html>
